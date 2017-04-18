@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<div class="nav navUser">
+    <h3 id="logo"><a href="/" class="logoLink">HuddleUp</a></h3>
+    <div class="welcome">
+        <p>Welcome, {{session.user}}!</p>
+        {{#if session.user}}
+            <a href="/logout" id="logout">Logout</a>
+        {{/if}}
+    </div>
+</div>
+
+
+<div class="background">
+
+</div>
+<div class="teamNav">
+    <ul>
+        <li class="selected"><a class="selected">My Homepage</a></li>
+        <li><a href="#" id="createTeamButton">Create Team</a></li>
+        <li><a href="#" class="joinTeamButton">Join Team</a></li>
+    </ul>
+</div>
+
+<div class="userHomeInfo">
+    <img src="trophy.png" alt="Trophy" class="trophy">
+    <h3 class="myTeams">Welcome to HuddleUp!</h3>
+    <p>Below you'll find teams you are a member or coach of. Click on any of your teams to see your Team Dashboard.</p>
+    <p>Not signed up with any teams yet? Click the links above to get started. To join a team you'll need to get a code from your coach. Create a new team to start managing your team today!</p>
+</div>
+
+<div class="dashboard">
+    <h3 class="myTeams">My Teams:</h3>
+    <div class="teams">
+        {{#each teams}}
+            <h4><a href="/team/{{id}}">{{teamname}}</a></h4>
+        {{/each}}
+
+        {{#each coachteams}}
+            <h4><a href="/team/{{id}}">{{teamname}}</a><img src="star.png" alt="star image"></h4>
+        {{/each}}
+        {{#if coachteams}}
+        <br>
+        <img src="star.png" alt="star image" class="star">
+        <p class="star">You coach this team</p>
+        {{/if}}
+    </div>
+    <!-- <div class="teamButtons">
+        <button class="submitButton" id="createTeamButton">Create Team</button>
+        <button type="button" name="button" class="joinTeamButton submitButton">Join Team</button>
+    </div> -->
+
+</div>
