@@ -413,7 +413,8 @@ app.post('/team/addMessage', function(req, res, next) {
 app.post('/sendTextMessage', function(req, res) {
     var teamId = req.body.teamId;
     var textMessage = req.body.textMessage;
-    var testNumbers = ['+14049315804', '+15046169063', '+14044058848', '+14047047634'];
+    var testNumbers = ['+14049315804'];
+    // var testNumbers = ['+14049315804', '+15046169063', '+14044058848', '+14047047634'];
     testNumbers.forEach(function(cellPhoneNumber){
       twilioClient.sms.messages.create({
           to:cellPhoneNumber,
