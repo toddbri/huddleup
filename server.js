@@ -11,7 +11,7 @@ var config = require('./config/dbc.js');
 var db = pgp({
     host: config.host,
     database: config.database,
-    user: config.user,
+    user:  config.user,
     password: config.password
 });
 const session = require('express-session');
